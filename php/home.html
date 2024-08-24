@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pagina per acquistare i biglietti</title>
+        <meta name="author" content="Paolo Aimar">
+        <meta name="keywords" lang="it" content="html">
+        <meta name="description" content="Pagina di acquisto dei biglietti">
+        <!--in questo caso la pagina viene aggiornata ogni 10 minuti, in quanto magari ci vuole qualche secondo in più per scegliere gli eventi
+        e quindi non sarebbe corretto aggiornarla ogni 60 secondi (l'utente non avrebbe il tempo di scegliere i biglietti per l'evento)-->
+        <meta http-equiv="refresh" content="600">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/home.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <!--In questo caso dichiaro una classe attiva in modo da cambiare ogni volta il colore e far capire in modo più chiaro all'utente
+            in quale pagina si trova-->
+            <!--utilizzo un menù per collegare le pagine, volendo si potevano anche utilizzare altri bottoni ma l'utente potrebbe rimanere 
+            leggermente confuso. Meglio utilizzare oggetti più intuitivi che aiutino il cliente a capire come spostarsi-->
+            <a href="home.html">Home</a>
+            <a href="acquisto.php">Acquista un biglietto</a>
+            <!--permetto all'utente di effettuare un logout nel caso in cui voglia acquistare i biglietti utilizzando un'altra email-->
+            <a href="logout.php">Logout</a>
+            <a href="carrello.php">Carrello Acquisti</a>
+        </div>
+        <h1>Sito per prenotare i biglietti</h1>
+        <h2>Introduzione al sito</h2>
+        <section class="intro">
+            <h2>Perché scegliere il nostro sito per l'acquisto dei tuoi biglietti?</h2>
+            <p>
+                Quando si tratta di acquistare biglietti per concerti, eventi sportivi o spettacoli, la nostra piattaforma si distingue per offrire un'esperienza senza pari. Ecco perché migliaia di clienti soddisfatti ci scelgono ogni anno:
+            </p>
+            <ul>
+                <li><strong>Facilità di Utilizzo:</strong> La nostra interfaccia user-friendly rende il processo di acquisto semplice e veloce. In pochi click, puoi trovare l'evento che desideri e completare l'acquisto senza intoppi.</li>
+                <li><strong>Ampia Selezione di Eventi:</strong> Offriamo un'ampia gamma di eventi in tutto il mondo, da concerti di artisti internazionali a spettacoli teatrali e sportivi. Non importa quale sia la tua passione, abbiamo qualcosa per te.</li>
+                <li><strong>Sicurezza e Affidabilità:</strong> La sicurezza dei tuoi dati è la nostra priorità. Utilizziamo le tecnologie di crittografia più avanzate per garantire che le tue transazioni siano sempre sicure e protette.</li>
+                <li><strong>Prezzi Competitivi:</strong> Lavoriamo direttamente con i promotori e le sedi per offrirti i migliori prezzi disponibili. Inoltre, spesso offriamo promozioni e sconti esclusivi ai nostri utenti.</li>
+                <li><strong>Assistenza Clienti Eccellente:</strong> Il nostro team di supporto è sempre pronto ad assisterti in caso di domande o problemi. Siamo disponibili via chat, email o telefono per garantire un'esperienza senza preoccupazioni.</li>
+                <li><strong>Gestione Facile del Carrello:</strong> Puoi aggiungere, rimuovere e visualizzare i tuoi biglietti in qualsiasi momento attraverso il nostro carrello intuitivo. La gestione degli acquisti è sempre sotto il tuo controllo.</li>
+            </ul>
+            <p>
+                Non solo ti offriamo una piattaforma sicura e facile da usare, ma ci impegniamo anche a fornirti un servizio clienti eccezionale e un'esperienza di acquisto senza pari. Che tu stia cercando di prenotare biglietti per un concerto indimenticabile, un evento sportivo emozionante o uno spettacolo teatrale coinvolgente, siamo qui per aiutarti.
+            </p>
+            <p>
+                Non perdere tempo con altre piattaforme: scegli noi per la tua prossima prenotazione di biglietti e scopri quanto può essere semplice e gratificante acquistare i biglietti per i tuoi eventi preferiti. <a href="acquisto.php" class="btn">Inizia a prenotare ora</a>
+            </p>
+        </section>
+        <p>
+            Questo sito viene utilizzato da diversi anni per acquistare i 
+            biglietti online dei concerti più importanti d'Italia e  del 
+            mondo. Per acquistare un biglietto &egrave; sufficiente premere sul 
+            pulsante acquista biglietto e selezionare l'evento che si 
+            desidera acquista. Successivamente &egrave; necessario inserire la 
+            quantit&agrave; di biglietti che si desidera comprare; verr&agrave; 
+            visualizzato il costo in tempo reale che si dovr&agrave; pagare 
+            per quel determinato evento. Premendo sul pulsante 
+            "aggiungi al carrello" vengono aggiunti tutti i biglietti selezionati
+            al carrello, che poteva essere già riempito da altri eventi che
+            erano gi&agrave; stati aggiunti in precedenza. Nel caso in cui non si
+            vogliano aggiungere i biglietti ma si voglia soltanto vedere 
+            la pagina del carrello per vedere quelli che sono gi&agrave; stati 
+            selezionati, &egrave; sufficiente cliccare sul pulsante "Carrello" 
+            presente sul men&ugrave;</p>
+            <figure><img src="../immagini/home_page.jpeg" alt="ticket image"></figure>
+    </body>
+</html>

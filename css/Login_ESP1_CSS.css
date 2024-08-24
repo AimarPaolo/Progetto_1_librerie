@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 1.25rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenitore {
+
+    background-color: #ddf1f5;
+    padding: 1.25rem; 
+    /*in questo caso si utilizza border-radius per creare dei bordi smussati*/
+    border-radius: 0.5rem; 
+    /*utilizzo box-shadow per creare dei bordi e delimitare la zona in cui andrò
+    ad inserire i campi del body html*/
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.707); 
+    max-width: 25rem; 
+    width: 100%;
+    /*necessario lasciare i margin auto per lasciar centrato il contenitore*/
+    margin: auto;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+h1 {
+    font-size: 1.15rem;
+    display: inline-block;
+    text-align: center; 
+    width: 100%;
+}
+
+form {
+    display: block;
+    margin-bottom: 0.3125rem; 
+    color: #555555;
+    text-align: left;
+    /* Limita la larghezza massima del form */
+    width: 100%; 
+    /* Larghezza del 100% per rendere il form responsivo */
+}
+
+label {
+    display: block;
+    margin-top: 0.625rem; 
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.5rem; 
+    margin-top: 0.3125rem; 
+}
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+    margin: 0.6rem;
+    margin-left: 5rem;
+    width: 14rem;
+    padding: 0.5rem 0.8rem; 
+    /*utilizzo cursor pointer come ulteriore avviso per l'utente che sta passando sul bottone per avvisarlo che questo è cliccabile*/
+    cursor: pointer;
+    /*rimane più bello graficamente, con i bordi si stacca troppo graficamente*/
+    border: none;
+    border-radius: 0.4rem;
+    transition: background-color 0.3s ease;
+    font-size: 1rem; 
+    color:white
+}
+#clear:hover, #registrazione:hover, #sottometti:hover{
+    background-color: navy;
+}
+#sottometti{
+    background-color: rgb(90, 207, 243);
+}
+#registrazione{
+    background-color: rgb(117, 117, 246);
+}
+#clear{
+    background-color: rgb(72, 72, 245);
+}
+
+/*aggiungo anche in questo caso del codice CSS per modificare la casella per l'inserimento dei dati nella fase di login*/
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 1.25rem); 
+    padding: 0.625rem; 
+    margin-bottom: 0.9375rem; 
+    border: 1px solid #dddddd;
+    border-radius: 0.25rem; 
+    box-sizing: border-box;    
+}
+
+.successo{
+    color: rgb(36, 173, 128);
+    font-size: 0.9rem;
+}
