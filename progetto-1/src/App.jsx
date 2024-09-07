@@ -1,35 +1,71 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import Navbar from './componenti/Navbar';
+import EventCard from './componenti/EventCard';
+import PurchaseMessage from './componenti/PurchaseMessage';
 
-function App() {
-  const [count, setCount] = useState(0)
 
+const App = () => {
+  const [events, setEvents] = useState(eventsData);
+  const [purchaseMessage, setPurchaseMessage] = useState('');
+
+  const eventi = [
+    {
+      id: 1,
+      name: 'AC/DC Power Up Festival',
+      image: './immagini/evento_1.png',
+      description: 'Concerto degli AC/DC il 25 maggio 2024.',
+      cost: 59.90,
+      date: '2024-05-25',
+      time: '18:00',
+      totalTickets: 0,
+    },
+    /*Aggiunta degli altri eventi*/
+  ];
+
+  const handleIncrement = (id) => {
+    setEvents((prevEvents) =>
+      prevEvents.map((event) =>
+        event.id === id ? { ...event, totalTickets: event.totalTickets + 1 } : event
+      )
+    );
+  };
+
+  const handleDecrement = (id) => {
+    setEvents((prevEvents) =>
+      prevEvents.map((event) =>
+        event.id === id && event.totalTickets > 0
+          ? { ...event, totalTickets: event.totalTickets - 1 }
+          : event
+      )
+    );
+  };
+
+  const handlePurchase = () => {
+    setPurchaseMessage('Il carrello è stato svuotato e i prodotti sono stati acquistati correttamente!');
+  };
+/*in questo caso non inserisco il login perchè non si è in grado di saperlo */
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      <Navbar />
+      <PurchaseMessage message={purchaseMessage} />
+      <div className="messaggio">Accesso eseguito come: Paolo Aimar</div>
+      <div className="contenitore">
+        <h1>Eventi disponibili per l'acquisto</h1>
+        {events.map((event) => (
+          <EventCard
+            key={event.id}
+            event={event}
+            onIncrement={handleIncrement}
+            onDecrement={handleDecrement}
+          />
+        ))}
+        <div className="bottoniFinali">
+          <button onClick={handlePurchase}>Aggiungi al carrello</button>
+          <button type="reset">Cancella</button>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;
